@@ -65,20 +65,25 @@ This shows in a visual format, the user’s specific test result. It will be dis
 
 ### Tech Stack
 
-React
-Express
+- React
+- Express
 
 **Client libraries**
-React
-React-router
-Axios
+
+- React
+- React-router
+- Axios
 
 **Server Libraries**
-Express
+
+- Express
 
 **Other**
-MaterialUI
-** Possibly D3js
+
+- MaterialUI
+- D3js **
+
+** optional, nice to have
 
 
 ### APIs
