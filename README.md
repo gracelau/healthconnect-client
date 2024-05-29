@@ -78,10 +78,29 @@ MaterialUI
 None, will be making Express API 
 
 ### Sitemap
+![HealthConnect Mockups SiteMap](https://github.com/gracelau/healthconnect-client/assets/11990799/f9e16163-456b-435e-b3bb-c121328ce837)
 
 
 
 ### Mockups
+![HealthConnect-Login](https://github.com/gracelau/healthconnect-client/assets/11990799/e71689b8-98f6-4302-bd47-2f36e28b761e)
+
+
+![HealthConnect-Home](https://github.com/gracelau/healthconnect-client/assets/11990799/51564df2-e6a0-4847-8273-a064b42c1aa5)
+
+![HealthConnect-History](https://github.com/gracelau/healthconnect-client/assets/11990799/6e88fe2b-2d8a-4bcb-9596-22281f0aeac7)
+![HealthConnect Appointments](https://github.com/gracelau/healthconnect-client/assets/11990799/b14cf886-ddd5-4f80-8e25-3b0c07639c3d)
+![HealthConnect Mockups Add New Appointment](https://github.com/gracelau/healthconnect-client/assets/11990799/8150573b-5900-41f7-b37b-6c61f3b91aca)
+![HealthConnect Mockups Edit Appointment](https://github.com/gracelau/healthconnect-client/assets/11990799/a4555135-4312-4ff3-b8ce-3bacc8150655)
+
+![HealthConnect Mockups Appointment](https://github.com/gracelau/healthconnect-client/assets/11990799/086b7cc6-78e6-40e1-aeb1-09e1866760b6)
+![HealthConnect Mockups Medications](https://github.com/gracelau/healthconnect-client/assets/11990799/06d6567c-8d5e-4975-86b8-f2acdc5f73b5)
+
+![HealthConnect Mockups - Referrals](https://github.com/gracelau/healthconnect-client/assets/11990799/d810a1fb-c9bf-4146-904b-a91e91a54e3b)
+
+
+
+
 
 
 
