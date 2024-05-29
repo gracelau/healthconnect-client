@@ -147,11 +147,11 @@ Response:
 User can add their own appointments here
 
 Parameters:
--id: appointment id
--provider: doctor name
--reason: reason for visit
--details: additional details (not visible on appointments list page)
--timestamp: date of appointment
+- id: appointment id
+- provider: doctor name
+- reason: reason for visit
+- details: additional details (not visible on appointments list page)
+- timestamp: date of appointment
 
 Response:
 
@@ -295,6 +295,7 @@ States for edit appointment
 - Tests with charts using D3JS
 - Individual pages for Medications and Referrals along with add, edit functionality
 - Delete functionality for Appointments
+- functional login page with JWT tokensn and auth
 
 
 
