@@ -307,7 +307,7 @@ Create GET /referrals to display list of specialist referrals data from Express 
 - Tests with charts using D3JS
 - Individual pages for Medications and Referrals along with add, edit functionality
 - Delete functionality for Appointments
-- functional login page with JWT tokensn and auth
+- functional login page with JWT tokens and auth
 
 
 
