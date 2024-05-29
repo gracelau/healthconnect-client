@@ -116,8 +116,11 @@ None, will be making Express API
 ### Data
 
 All data will be coming from the express API to the front end. 
-There will be a json file for each page, 
-Appointments, medications, referrals, tests
+There will be a json file for each page:
+- Appointments
+- Medications
+- Referrals
+- Tests (optional)
 
 
 ### Endpoints
@@ -267,8 +270,8 @@ Buttons that link to other page: History, Tests, Referrals
 
 **Feature View History > Appointments**
 
--Implement view appointments page
--Create GET/history/appointments
+- Implement view appointments page
+- Create GET/history/appointments
 **all get requests are pulling from express server API
 
 **Feature View Appointment**
