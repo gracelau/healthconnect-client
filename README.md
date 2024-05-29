@@ -1,0 +1,232 @@
+# Project Title
+
+### Health Connect
+
+## Overview
+
+A self carried EMR that allows patients to have a holistic view of their health and the ability to choose and share relevant data with various medical services providers.
+
+
+### Problem
+
+There currently is not a centralized electronic medical records system that any doctor’s office can access in Canada. Many people also do not have a family doctor in Canada. In fact, many people rely solely on various medical clinics and walk-in doctors and also end up having to advocate for their own health. People end up having to repeat why they are seeking medical care in addition to having various medical providers piece together the building blocks of their health history which results in possible errors through miscommunication. This problem also applies to people who do have family doctors but have to see other specialists, emergency doctors or walk-in clinic doctors for any other reasons. 
+
+### User Profile
+
+- must have a smartphone and be over 18+
+- wants to advocate for own medical care
+- may not have a family doctor
+- wants to take control of their own health and track own health data
+- users could possibly be people who own health tracking devices such as an Apple Watch or Fitbit
+
+
+### Features
+
+**Health Overview**
+This is the **home dashboard screen**. It shows a user’s current health snapshot with some default stats as well as has buttons linking to History, Tests, and Referrals
+
+
+**History**
+This is the page where a user can decide to view past appointments as well as medications prescribed. There are two possible options here, Appointments and Medications
+
+**Appointments**
+	Displays a list of past appointments with doctor name, date and reason for appointment
+
+**Appointment Single Page**
+Displays a static record of appointment, shows details parameter which is not visible on Appointments list page
+
+**Add New Appointment Page**
+Allows user to add an appointment record with a form that has four parameters: provider, reason, details( not visible on Appointments List page), and Date
+
+**Appointment Edit Page**
+Allows user the ability to edit details of an appointment record with an additional details parameter
+Medications
+Displays a list of medications prescribed with DIN number and date
+
+**Referrals**
+Displays a list of referral doctors with their names and specializations
+
+**Tests**
+This shows a user’s test history and has different categories that allow a user to select what tests they would like to view such as Blood Tests
+
+**Individual Test page**
+This shows in a visual format, the user’s specific test result. It will be displayed with visualizations to aid in user understanding of results
+
+
+## Implementation
+
+### Tech Stack
+
+React
+Express
+
+**Client libraries**
+React
+React-router
+Axios
+
+**Server Libraries**
+Express
+
+**Other**
+MaterialUI
+** Possibly D3js
+
+
+### APIs
+
+None, will be making Express API 
+
+### Sitemap
+
+
+
+### Mockups
+
+
+
+### Data
+
+All data will be coming from the express API to the front end. 
+There will be a json file for each page, 
+Appointments, medications, referrals, tests
+
+
+### Endpoints
+
+**GET /history/appointments**
+Gets a user's appointment history list
+
+
+Response:
+{
+“Id”: 1,
+“Provider”: Dr.Kwong,
+“Reason”: Blood pressure,
+“timestamp”: 1712988328
+}
+
+
+
+**POST /history/appointments/:id**
+
+User can add their own appointments here
+
+Parameters:
+-id: appointment id
+-provider: doctor name
+-reason: reason for visit
+-details: additional details (not visible on appointments list page)
+-timestamp: date of appointment
+
+Response:
+{
+“Id”: 1,
+“Provider”: Dr.Kwong,
+“Reason”: Blood pressure,
+“Details”:Had confusion, blurry vision, dizziness, fainted and also nausea and sleepiness
+“timestamp”: 1712988328
+}
+
+
+**PUT /history/appointments/:id/edit**
+User can update their appointment history
+
+Parameters:
+- id: appointment id
+- provider: doctor name
+- reason: reason for visit
+- timestamp: date of appointment
+
+Response:
+{
+“Id”: 1,
+“Provider”: Dr.Kwong,
+“Reason”: Blood pressure,
+“Details”:Had confusion, blurry vision, dizziness, fainted and also nausea and sleepiness
+“timestamp”: 1712988328
+}
+
+**GET /history/medications**
+
+Users can see their medications history list here
+
+Parameters:
+- id: medication id
+- name: medication name
+- DIN: drug interaction number ( unique identifier for each drug)
+- timestamp : the date prescription was issued
+
+Response:
+{
+“Id”: 1,
+Name”: Hydrocortisone,
+“DIN”: 1234567,
+“timestamp”: 1712988340
+}
+
+
+**GET /referrals**
+Users can see their referrals for specialists here
+
+Parameters:
+- id: id of referral
+- name: name of provider
+- type: specialization
+
+{
+“Id”: 1,
+“Name”: Dr.Chang,
+“Type”: Cardiologist
+}
+
+### Auth
+
+No auth will be used, assuming the user is logged in already.
+
+## Roadmap
+**Create Client**
+React project with routes and boilerplate pages
+
+**Create Server**
+Express server with routing and placeholder responses as well as JSON files for appointments, medications and referrals
+
+
+**Feature: Home Page/Dashboard**
+Main login page with some default user stats displayed
+Placeholder Chart Image
+Buttons that link to other page: History, Tests, Referrals
+
+
+
+**Feature View History > Appointments**
+-Implement view appointments page
+-Create GET/history/appointments
+**all get requests are pulling from express server API
+
+**Feature View Appointment**
+Create GET/history/appointments/:id
+
+**Feature Add Appointment**
+Create form inputs for new appointment
+Create POST /history/appointments/new
+States for add appointment
+
+** all post requests are writing to a JSON file
+
+**Feature: Edit Appointment**
+Create form fields that output existing data from API
+Create PUT /history/appointments/edit
+States for edit appointment
+
+
+
+
+
+
+
+
+
+
+
+
