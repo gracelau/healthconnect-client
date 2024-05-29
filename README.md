@@ -24,7 +24,7 @@ There currently is not a centralized electronic medical records system that any 
 
 **Health Overview**
 
-This is the **home dashboard screen**. It shows a user’s current health snapshot with some default stats as well as has buttons linking to History, Tests, and Referrals
+This is the **home dashboard screen**. It shows a user’s current health snapshot with some default stats as well as has buttons linking to **History**, **Tests**, and **Referrals**.
 
 
 **History**
