@@ -238,6 +238,14 @@ Create form fields that output existing data from API
 Create PUT /history/appointments/edit
 States for edit appointment
 
+## Nice-to-haves
+
+
+- Tests with charts using D3JS
+- Individual pages for Medications and Referrals along with add, edit functionality
+- Delete functionality for Appointments
+
+
 
 
 
