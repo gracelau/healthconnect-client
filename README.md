@@ -276,7 +276,7 @@ Buttons that link to other page: History, Tests, Referrals
 
 **Feature View Appointment**
 
-Create GET/history/appointments/:id
+Create GET /history/appointments/:id
 
 **Feature Add Appointment**
 
@@ -293,6 +293,14 @@ Create form fields that output existing data from API
 Create PUT /history/appointments/edit
 States for edit appointment
 
+
+**Feature: Medications Page**
+
+Create GET /history/medications to display list of medications data from Express AP medications.json file
+
+**Feature Referrals Page**
+
+Create GET /referrals to display list of specialist referrals data from Express API referrals.json file
 ## Nice-to-haves
 
 
