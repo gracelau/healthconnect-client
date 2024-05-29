@@ -131,8 +131,11 @@ Response:
 {
 
 “id”: 1,
+
 “Provider”: Dr.Kwong,
+
 “Reason”: Blood pressure,
+
 “timestamp”: 1712988328
 
 }
@@ -154,10 +157,14 @@ Response:
 
 {
 
-“Id”: 1,
+“id”: 1,
+
 “Provider”: Dr.Kwong,
+
 “Reason”: Blood pressure,
+
 “Details”:Had confusion, blurry vision, dizziness, fainted and also nausea and sleepiness,
+
 “timestamp”: 1712988328
 
 }
@@ -178,10 +185,14 @@ Response:
 
 {
 
-“Id”: 1,
+“id”: 1,
+
 “Provider”: Dr.Kwong,
+
 “Reason”: Blood pressure,
+
 “Details”:Had confusion, blurry vision, dizziness, fainted and also nausea and sleepiness,
+
 “timestamp”: 1712988328
 
 }
@@ -201,9 +212,12 @@ Response:
 
 {
 
-“Id”: 1,
+“id”: 1,
+
 Name”: Hydrocortisone,
+
 “DIN”: 1234567,
+
 “timestamp”: 1712988340
 
 }
@@ -220,8 +234,10 @@ Parameters:
 
 {
 
-“Id”: 1,
+“id”: 1,
+
 “Name”: Dr.Chang,
+
 “Type”: Cardiologist
 
 }
@@ -232,6 +248,7 @@ No auth will be used, assuming the user is logged in already.
 
 ## Roadmap
 **Create Client**
+
 React project with routes and boilerplate pages
 
 **Create Server**
@@ -240,6 +257,7 @@ Express server with routing and placeholder responses as well as JSON files for 
 
 
 **Feature: Home Page/Dashboard**
+
 Main login page with some default user stats displayed
 Placeholder Chart Image
 Buttons that link to other page: History, Tests, Referrals
@@ -247,21 +265,26 @@ Buttons that link to other page: History, Tests, Referrals
 
 
 **Feature View History > Appointments**
+
 -Implement view appointments page
 -Create GET/history/appointments
 **all get requests are pulling from express server API
 
 **Feature View Appointment**
+
 Create GET/history/appointments/:id
 
 **Feature Add Appointment**
+
 Create form inputs for new appointment
 Create POST /history/appointments/new
 States for add appointment
 
 ** all post requests are writing to a JSON file
 
+
 **Feature: Edit Appointment**
+
 Create form fields that output existing data from API
 Create PUT /history/appointments/edit
 States for edit appointment
