@@ -116,7 +116,7 @@ None, will be making Express API
 ### Data
 
 All data will be coming from the express API to the front end. 
-There will be a json file for each page:
+There will be a JSON file for each page:
 - Appointments
 - Medications
 - Referrals
