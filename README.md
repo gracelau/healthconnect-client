@@ -29,7 +29,7 @@ This is the **home dashboard screen**. It shows a user’s current health snapsh
 
 **History**
 
-This is the page where a user can decide to view past appointments as well as medications prescribed. There are two possible options here, Appointments and Medications
+This is the page where a user can decide to view past appointments as well as medications prescribed. There are **two possible options** here, **Appointments** and **Medications**.
 
 **Appointments**
 
