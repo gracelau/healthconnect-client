@@ -100,6 +100,7 @@ No external APIs,  will be making Express API
 
 
 ![HealthConnect-Home](https://github.com/gracelau/healthconnect-client/assets/11990799/51564df2-e6a0-4847-8273-a064b42c1aa5)
+![HealthConnect-Settings](https://github.com/gracelau/healthconnect-client/assets/11990799/39f2eb01-ab64-42c7-a07f-2352ec8946ce)
 
 ![HealthConnect-History](https://github.com/gracelau/healthconnect-client/assets/11990799/6e88fe2b-2d8a-4bcb-9596-22281f0aeac7)
 ![HealthConnect Appointments](https://github.com/gracelau/healthconnect-client/assets/11990799/b14cf886-ddd5-4f80-8e25-3b0c07639c3d)
