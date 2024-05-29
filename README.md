@@ -104,7 +104,8 @@ None, will be making Express API
 ![HealthConnect Mockups Appointment](https://github.com/gracelau/healthconnect-client/assets/11990799/086b7cc6-78e6-40e1-aeb1-09e1866760b6)
 ![HealthConnect Mockups Medications](https://github.com/gracelau/healthconnect-client/assets/11990799/06d6567c-8d5e-4975-86b8-f2acdc5f73b5)
 
-![HealthConnect Mockups - Referrals](https://github.com/gracelau/healthconnect-client/assets/11990799/d810a1fb-c9bf-4146-904b-a91e91a54e3b)
+![HealthConnect Mockups Referrals](https://github.com/gracelau/healthconnect-client/assets/11990799/2fae302a-0bc9-4049-8878-63cf1bcd1a40)
+
 
 
 
