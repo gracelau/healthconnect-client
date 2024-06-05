@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../AppointmentsPage/AppointmentsPage.scss";
+import editIcon from "../../assets/icons/edit.svg";
+import delIcon from "../../assets/icons/delete.svg";
 
 
 
@@ -44,6 +46,9 @@ const Appts =() => {
         <div className="appts__wrapper">
             <div className="appts__container">
              <h3 className =" appts__title">Appointments</h3>
+             <div className="appts__add-btn-container">
+              <button className="appts__add-btn">Add</button>
+             </div>
 
              <table className="appts__table">
                 <thead>
@@ -61,8 +66,8 @@ const Appts =() => {
                       <tr key= {item.id}>
                       <td>{item.Provider} </td>
                       <td>{item.Reason}</td>
-                      <td>{item.date}</td> <button className="appts__edit-btn" onClick={() => handleEdit(item.id)}>Edit</button>
-                      <button className="appts__delete-btn">Delete</button>
+                      <td>{item.date}</td> <button className="appts__edit-btn" onClick={() => handleEdit(item.id)}><img className ="appts__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
+                      <button className="appts__delete-btn"><img className="appts__del-btn-svg" src ={delIcon} alt="delete icon"/></button>
                   </tr>
                  
 
