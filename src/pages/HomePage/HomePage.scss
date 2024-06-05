@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.home {
+
+    &__title {
+        color: $fifth;
+    }
+    &__links-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 30%;
+    }
+
+    &__history-btn, &__tests-btn, &__ref-btn{
+        color:$fifth;
+        background-color: $primary;
+        border: 1px solid $third;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-right:1rem;
+
+    }
+}

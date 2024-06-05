@@ -1,0 +1,25 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    /* Set font defaults per style guide */
+    font-family: $font;
+    font-weight: $regular;
+    font-size: 0.813rem; //13px - used M P2 Medium as the default body sizing from Style Guide
+    line-height: 1.25rem; //20 px 
+    @include tablet {
+      font-size: 0.875rem; //14px
+      line-height: 1.375rem; //22 px - used M P2 Tablet from Style Guide
+    }
+  }
+  
+  li {
+    list-style:none;
+  }
