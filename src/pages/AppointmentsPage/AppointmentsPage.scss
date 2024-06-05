@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.appts {
+
+    &__add-btn-container {
+        width:40%;
+        display: flex;
+        flex-direction: row-reverse;
+        // justify-self:flex-end;
+        
+    }
+
+    &__edit-btn, &__delete-btn {
+        background-color: transparent;
+        color: $fifth;
+        border: none;
+       
+
+
+    }
+}

@@ -1,0 +1,179 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+    background-color:white;
+  
+  
+    &__wrapper {
+     
+      @include tablet {
+        display:flex;
+        justify-content: flex-end;
+  
+      }
+
+      @include desktop{
+        width:90%;
+      }
+    }
+    &__logo-img{ 
+      padding-top:1rem;
+      padding-bottom: 1rem;
+      width:200px;
+    
+  
+      @include tablet {
+        padding-left: 3rem;
+        padding-top:1.5rem;
+       width:200px;
+        
+      }
+    
+      @include desktop{
+        padding-left:6rem;
+        width:250px;
+      }
+    }
+  
+    &__avatar-img {
+      
+      width:2.8rem;
+      height:2.7rem;
+      object-fit: cover;
+      border-radius:50%;
+      margin-right:1rem;
+      margin-bottom:1rem;
+  
+      @include tablet { 
+        display:none;
+      }
+    }
+    
+    &__avatar-img-tablet{
+      display:none;
+  
+      @include tablet{
+        display:flex;
+        width:2.8rem;
+        height:2.7rem;
+        object-fit: cover;
+        border-radius:50%;
+        margin-top:1rem;
+        margin-right:1rem;
+  
+      }
+
+      @include desktop {
+        margin-left:1.5rem;
+        
+      }
+    }
+  
+  
+    &__searchbar-wrapper {
+      display:flex;
+      align-items:center;
+      width:100%;
+  
+      @include tablet {
+        justify-content: flex-end;
+      }
+    }
+  
+    &__searchbar-input{
+     
+      padding-left:3rem;
+      padding-right:3rem;
+      height: 2.25rem;
+      border-radius:0.3rem;
+      font-family:"AvenirNextLTPro";
+      background-color:lightcoral;
+      border: 2px solid lightgrey;
+      width:85%;
+      margin-left:2rem;
+      margin-top:1.25rem;
+      margin-right:1rem;
+      
+      
+      @include tablet{
+        height:3rem;
+        margin-top:1rem;
+      }
+
+      @include desktop {
+        height:2.8rem;
+      }
+  
+      &-icon {
+        position:relative;
+        left:-110px;
+        top:-25px;
+      
+  
+        @include tablet{
+          top:-33px;
+          left:-115px;
+        }
+      }
+      
+    }
+  
+    &__link {
+      margin-right:1rem;
+      width:50%;
+
+      @include desktop {
+        width: 40%;
+      }
+    }
+    &__upload-btn{
+      background-color:lightblue;
+      color: white;
+      font-weight:bold;
+      padding-left: 7rem;
+      padding-right:7rem;
+      padding-bottom:1rem;
+      padding-top: 0;
+      text-transform: uppercase;
+      border:none;
+      border-radius:0.3rem;
+      margin-top:0;
+      margin-left:0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom:1rem;
+      width:90%;
+  
+      @include tablet{
+        width: 100%; // changed this from 50%
+        height:3rem;
+        margin-top:1rem;
+        padding-left: 0rem;
+        padding-right:0rem;
+      
+      }
+
+      @include desktop {
+        height:2.8rem;
+        width:100%;// removed the 20%;
+      }
+      
+  
+      &-icon{
+        position: relative;
+        height: 2.1rem;
+        left:-155px;
+        top: 4px;
+        padding-top:0.5rem;
+  
+        @include tablet{
+          left:-45px;
+          height:2rem;
+        }
+        @include desktop {
+          left:-35px;
+        }
+       
+      }
+    }
+  }
