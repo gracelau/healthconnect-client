@@ -53,7 +53,7 @@ const Appts =() => {
              <table className="appts__table">
                 <thead>
                     
-                    <tr>
+                    <tr className="appts__table-top-section">
                         <th>Provider</th>
                  
                         <th>Reason</th>
