@@ -1,0 +1,30 @@
+.appt {
+
+    &__title-container{
+        display: flex;
+        flex-direction: row;
+        align-items:baseline;
+    }
+
+    &__back-btn{
+        border: none;
+        background-color: transparent;
+    }
+
+    &__view {
+        width:30%;
+        height: 40vh;
+        border-radius: 4px;
+        border: 1px solid black;
+        
+    }
+
+    &__view-list {
+        list-style-type: none;
+    }
+
+    &__view-listitem {
+        padding-bottom:1.5rem;
+        overflow-wrap: break-word;
+    }
+}

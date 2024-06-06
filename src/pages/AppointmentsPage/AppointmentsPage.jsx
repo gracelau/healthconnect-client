@@ -33,7 +33,11 @@ const Appts =() => {
     const [selectedAppt, setSelectedAppt] = useState({});
     const navigate = useNavigate();
 
-    const handleEdit = (id) => {
+    const handleRowClick = (id) => {
+      navigate(`/history/appointments/${id}`);
+  };
+    const handleEdit = (e,id) => {
+      e.stopPropagation();
         navigate(`/history/appointments/${id}/edit`);
       };
 
@@ -63,7 +67,7 @@ const Appts =() => {
                 </thead>
                 <tbody>
                     {appts.map(item=> 
-                      <tr key= {item.id}>
+                      <tr key={item.id} onClick={() => handleRowClick(item.id)}>
                       <td>{item.Provider} </td>
                       <td>{item.Reason}</td>
                       <td>{item.date}</td> <button className="appts__edit-btn" onClick={() => handleEdit(item.id)}><img className ="appts__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>

@@ -19,4 +19,24 @@
 
 
     }
+
+    &__table {
+
+            border-collapse: collapse;
+            // border: 2px solid rgb(140 140 140);
+            // font-family: sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            width:50%;
+          
+    }
+
+    &__table-top-section {
+        border-bottom: 1px solid black;
+    }
+
+}
+
+td{
+    border-right: 1px solid black;
 }
