@@ -2,29 +2,17 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AppointmentForm.scss";
- const {REACT_APP_API_URL} = process.env;
+const {REACT_APP_API_URL} = process.env;
 
- const apiUrl = "http://localhost:8080";
-function AppointmentForm ( {handleSubmit, id}) {
-   
-    const navigate = useNavigate();
-    
-    const initialFields = {
-        Provider:"",
-        Reason:"",
-        details:"",
-        date:"",
-    };
-
-
-    // const [fields, setFields]= useState(initialFields);
-    const [provider,setProvider] =useState("");
-    const [reason, setReason]= useState("");
-    const [details, setDetails] = useState("");
-    const [date, setDate] = useState("");
-    const [fieldErrors,setFieldErrors] = useState(initialFields);
-
-    const [validForm, setValidForm] = useState(false);
+const apiUrl = "http://localhost:8080";
+function AppointmentForm ( {handleCancel, handleSubmit, id}) {
+   const navigate = useNavigate();
+   const [provider,setProvider] =useState("");
+   const [reason, setReason]= useState("");
+   const [details, setDetails] = useState("");
+   const [date, setDate] = useState("");
+   const [fieldErrors,setFieldErrors] = useState({});
+   const [validForm, setValidForm] = useState(true);
 
     useEffect(() => {
         if (id) {
@@ -35,30 +23,11 @@ function AppointmentForm ( {handleSubmit, id}) {
                     );
 
                     console.log(response);
-                   
-                   //Get data from server to populate form fields
-                    // setFields ({
-                    //     Provider: response.data.Provider,
-                    //     Reason: response.data.Reason,
-                    //     details: response.data.details,
-                    //     date: new Date(response.data.timestamp).toLocaleDateString()
-
-
-                    // });
-                    const formattedDate = new Date(response.data.timestamp).toLocaleDateString()
+                   const formattedDate = new Date(response.data.timestamp).toLocaleDateString()
                     setProvider(response.data.Provider)
                     setReason(response.data.Reason)
                     setDetails(response.data.details)
                     setDate(formattedDate)
-
-                    // set errors to false after form field population
-                    // setFieldErrors({
-                        
-                    //     Provider:false,
-                    //     Reason: false,
-                    //     details: false,
-                    //     date: false,
-                    // });
                 }catch (err) {
                     console.error("GET request to /history/appointments/:id failed:", err);
                 }
@@ -68,74 +37,56 @@ function AppointmentForm ( {handleSubmit, id}) {
        
     }, []);
 
-    // useEffect(()=> {
-    //     setValidForm(Object.values(fieldErrors).every((error)=> error ===false));
-    // }, [fieldErrors]);
-    
-//    function  handleFieldChange(e) {
-//     const { Provider, Reason, details, date, value } = e.target;
-// console.log(value);
-// console.log(fields);
-// console.log("e.target", e.target);
-    
-//     //Error handling for invalid New Appointment form submissions
-     
-//      //Check if form fields are empty
-//      if (value ==="") {
-//         setFieldErrors({
-//             ...fieldErrors,
-//             [Provider]: true,
-//             [Reason]: true,
-//             [details]: true,
-//             [date]:true,
-//         });
+const updateErrors = (fieldName, isError) => {
+const errors = { ...fieldErrors };
+errors[fieldName] = isError;
+setFieldErrors(errors);
+};
 
-//      }else {
-//         setFieldErrors({
-//             ...fieldErrors,
-//             [Provider]: false,
-//             [Reason]: false,
-//             [details]: false,
-//             [date]:false,
-//         });
-//      }
-
-//      setFields ({
-//         ...fields,
-//         [Provider]: value,
-//         [Reason]: value,
-//         [details]: value,
-//         [date]:value,
-//      });
-//     }
 const handleProviderChange = (e) =>{
-  setProvider(e.target.value)
+  setProvider(e.target.value);
+  updateErrors("Provider", e.target.value === "");
 
-  if (e.target.value ==="") {
-            setFieldErrors({
-                ...fieldErrors,
-                [provider]: true,})
-}
+
  }
 
 const handleReasonChange = (e) =>{
-  setReason(e.target.value)
+  setReason(e.target.value);
+  updateErrors("Reason", e.target.value === "");
 }
 
 const handleDetailsChange = (e) =>{
-  setDetails(e.target.value)
+  setDetails(e.target.value);
+  updateErrors("details", e.target.value === "");
 }
 
 const handleDateChange = (e) =>{
-  setDate(e.target.value)
+  setDate(e.target.value);
+  const d = new Date(e.target.value);
+  updateErrors("date", isNaN(d));
 }
+
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+  const errors = [];
+  Object.keys(fieldErrors).forEach(fieldName => {
+    if (fieldErrors[fieldName]) {
+      errors.push(fieldName);
+    }
+  });
+  if (errors.length > 0) {
+    window.alert(`The following fields are invalid: ${errors.join(", ")}`);
+  } else {
+    handleSubmit(e, { Provider: provider, Reason: reason, details, date }, validForm);
+  }
+};
 
 
 
 
 return (
     <form className="appt__form"
-    onSubmit={(e)=> handleSubmit(e,validForm)}>
+    onSubmit={handleFormSubmit}>
         <div className ="appt__form-container">
 
         <div className="appt__form-field-group">
@@ -153,6 +104,9 @@ return (
         `}
             value={provider}
             onInput={handleProviderChange }
+            style={{
+              border: fieldErrors.Provider ? "1px solid red" : "",
+            }}
           />
             
 
@@ -175,6 +129,9 @@ return (
         `}
             value={reason}
             onInput={handleReasonChange}
+            style={{
+              border: fieldErrors.Provider ? "1px solid red" : "",
+            }}
           />
             
 
@@ -195,6 +152,9 @@ return (
         `}
             value={details}
             onInput={handleDetailsChange}
+            style={{
+              border: fieldErrors.Provider ? "1px solid red" : "",
+            }}
           />
             
         </div>
@@ -214,6 +174,9 @@ return (
         `}
             value={date}
             onInput={handleDateChange}
+            style={{
+              border: fieldErrors.Provider ? "1px solid red" : "",
+            }}
           />
             
 
@@ -221,7 +184,7 @@ return (
         </div>
 
        <div className = "appt__form-btn-group">
-        <button className="appt__form-btn-cancel" onClick ={() => navigate(`${REACT_APP_API_URL}/history/appointments/${id} || ""}`)}>Cancel</button>
+        <button className="appt__form-btn-cancel" onClick={() => handleCancel()}>Cancel</button>
         <button className="appt__form-btn-save" type = "submit"> {id ? "Save" : " + Add Appointment"}</button>
 
        </div>

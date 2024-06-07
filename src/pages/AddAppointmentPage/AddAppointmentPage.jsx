@@ -79,7 +79,7 @@ function AddAppointmentPage () {
     )
     if (isFormValid()) {
         alert("New appointment added successfully");
-        navigate("/");
+        navigate("/history/appointments");
       } else {
         alert("New appointment addition failed. Please try again");
       }
