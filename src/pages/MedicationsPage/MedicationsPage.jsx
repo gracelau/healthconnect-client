@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+const {REACT_APP_API_URL} = process.env;
 
-const apiUrl = "http://localhost:8080";
 
 
 const getAllMeds = async (setMeds) => {
     try{
       // const response = await axios.get(`${apiUrl}/videos?api_key=${apiKey}`);
-      const response = await axios.get(`${apiUrl}/history/medications`);
+      const response = await axios.get(`${REACT_APP_API_URL}/history/medications`);
       const formattedData = response.data.map(med => ({
         ...med,
         date: new Date(med.timestamp).toLocaleDateString()

@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AppointmentForm from "../../components/AppointmentForm/AppointmentForm";
 import "../AddAppointmentPage/AddAppointmentPage.scss";
-
+const {REACT_APP_API_URL} = process.env;
+const apiUrl = "http://localhost:8080";
 
 function AddAppointmentPage () {
     const [provider, setProvider] = useState("");
@@ -66,15 +67,15 @@ function AddAppointmentPage () {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+console.log("submit")
     const response =await axios.post(
-      `${process.env.REACT_APP_API_URL}/history/appointments`,
+      `${REACT_APP_API_URL}/history/appointments`,
       {
-        provider: event.target.provider.value,
-        reason:event.target.reason.value,
+        provider: event.target.Provider.value,
+        reason:event.target.Reason.value,
         details: event.target.details.value,
-        date: event.target.date.value,
-
+        timestamp: new Date(event.target.date.value).toISOString(),
+        
       }
     )
     if (isFormValid()) {

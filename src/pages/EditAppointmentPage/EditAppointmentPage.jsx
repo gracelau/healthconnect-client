@@ -24,7 +24,7 @@ const EditAppointmentPage = () => {
     const formattedFieldValues = {
       Provider: fieldValues.Provider,
       Reason: fieldValues.Reason,
-      Details: fieldValues.details,
+      details: fieldValues.details,
       timestamp: new Date(fieldValues.date).toISOString(),
     };
     try {

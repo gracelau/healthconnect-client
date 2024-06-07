@@ -4,28 +4,11 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import backArrowIcon from "../../assets/icons/backarrow.svg";
 import editIcon from "../../assets/icons/edit.svg";
 import "../AppointmentSinglePage/AppointmentSinglePage.scss";
+const {REACT_APP_API_URL} = process.env;
+
+// const apiUrl = "http://localhost:8080";
 
 
-const apiUrl = "http://localhost:8080";
-
-// const ApptSinglePage= (props)=> {
- 
-   
-
-// const getAppt = async (setAppt) => {
-//     try{
-//       // const response = await axios.get(`${apiUrl}/videos?api_key=${apiKey}`);
-//       const response = await axios.get(`${apiUrl}/history/appointments/${apptId}`);
-//       const formattedData = response.data.map(appt => ({
-//         ...appt,
-//         date: new Date(appt.timestamp).toLocaleDateString()
-//     }));
-//     setAppt(formattedData);
-    
-//     }catch (error) {
-//     console.error("Error getting single appointment", error);
-//       }
-//    };
 
    const ApptSinglePage =(props) => {
     const {id} = useParams();
@@ -43,7 +26,7 @@ const apiUrl = "http://localhost:8080";
         const getSingleAppt = async (id) => {
             console.log(id);
             const response = await axios.get(
-                `${apiUrl}/history/appointments/${id}` );
+                `${REACT_APP_API_URL}/history/appointments/${id}` );
                 const formattedData = {
                     ...response.data,
                     date: new Date(response.data.timestamp).toLocaleDateString()
@@ -70,32 +53,7 @@ const apiUrl = "http://localhost:8080";
               <button className="appt__share-btn">Share</button>
               <button className="appt__edit-btn" onClick={() => handleEdit(selectedAppt.id)}><img className ="appt__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
              </div>
-             {/* <div className="appt__view">
-                <thead>
-                    
-                    <tr className="appt__table-top-section">
-                        <th>Provider</th>
-                         <th>Reason</th>
-                         <th>Details</th>
-                         <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-             
-                      <tr key= {selectedAppt.id}>
-                      <td>{selectedAppt.Provider} </td>
-                      <td>{selectedAppt.Reason}</td>
-                      <td>{selectedAppt.details}</td>
-                      <td>{selectedAppt.date}</td> <button className="appt__edit-btn" onClick={() => handleEdit(selectedAppt.id)}><img className ="appt__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
-                      <button className="appt__delete-btn"><img className="appt__del-btn-svg" src ={delIcon} alt="delete icon"/></button>
-                  </tr>
-                 
-
-                   
-                  
-                
-                </tbody>
-             </div> */}
+          
 
 
              <div className="appt__view">

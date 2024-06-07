@@ -4,25 +4,26 @@ import axios from "axios";
 import "./AppointmentForm.scss";
 const {REACT_APP_API_URL} = process.env;
 
-const apiUrl = "http://localhost:8080";
+
 function AppointmentForm ( {handleCancel, handleSubmit, id}) {
    const navigate = useNavigate();
+   
    const [provider,setProvider] =useState("");
    const [reason, setReason]= useState("");
    const [details, setDetails] = useState("");
    const [date, setDate] = useState("");
    const [fieldErrors,setFieldErrors] = useState({});
    const [validForm, setValidForm] = useState(true);
-
+console.log(REACT_APP_API_URL);
     useEffect(() => {
         if (id) {
             async function getAppointment () {
                 try {
                     const response = await axios.get(
-                        `${apiUrl}/history/appointments/${id}`
+                        `${REACT_APP_API_URL}/history/appointments/${id}`
                     );
 
-                    console.log(response);
+                    // console.log(response);
                    const formattedDate = new Date(response.data.timestamp).toLocaleDateString()
                     setProvider(response.data.Provider)
                     setReason(response.data.Reason)
@@ -66,27 +67,40 @@ const handleDateChange = (e) =>{
   updateErrors("date", isNaN(d));
 }
 
-const handleFormSubmit = (e) => {
-  e.preventDefault();
-  const errors = [];
-  Object.keys(fieldErrors).forEach(fieldName => {
-    if (fieldErrors[fieldName]) {
-      errors.push(fieldName);
-    }
-  });
-  if (errors.length > 0) {
-    window.alert(`The following fields are invalid: ${errors.join(", ")}`);
-  } else {
-    handleSubmit(e, { Provider: provider, Reason: reason, details, date }, validForm);
-  }
-};
+// const handleFormSubmit = (e) => {
+//   e.preventDefault();
+//   const errors = [];
+//   Object.keys(fieldErrors).forEach(fieldName => {
+//     if (fieldErrors[fieldName]) {
+//       errors.push(fieldName);
+//     }
+//   });
+//   if (errors.length > 0) {
+//     window.alert(`The following fields are invalid: ${errors.join(", ")}`);
+//   } else {
+//     handleSubmit(e, { Provider: provider, Reason: reason, details, date }, validForm);
+//   }
+// };
 
 
 
 
 return (
     <form className="appt__form"
-    onSubmit={handleFormSubmit}>
+    onSubmit={(e) => {
+      e.preventDefault();
+      const errors = [];
+      Object.keys(fieldErrors).forEach(fieldName => {
+        if (fieldErrors[fieldName]) {
+          errors.push(fieldName);
+        }
+      });
+      if (errors.length > 0) {
+        window.alert(`The following fields are invalid: ${errors.join(", ")}`);
+      } else {
+        handleSubmit(e, { Provider: provider, Reason: reason, details, date }, validForm);
+      }
+    }}>
         <div className ="appt__form-container">
 
         <div className="appt__form-field-group">
