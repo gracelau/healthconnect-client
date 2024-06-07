@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import HomePage from "./pages/HomePage/HomePage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import AppointmentsPage from "./pages/AppointmentsPage/AppointmentsPage";
+import AddAppointmentPage from "./pages/AddAppointmentPage/AddAppointmentPage";
 import AppointmentSinglePage from "./pages/AppointmentSinglePage/AppointmentSinglePage";
 import EditAppointmentPage from "./pages/EditAppointmentPage/EditAppointmentPage";
 import MedicationsPage from "./pages/MedicationsPage/MedicationsPage";
@@ -20,6 +21,7 @@ function App() {
       <Route path="/" element = {<HomePage/>} />
       <Route path="/history" element = {<HistoryPage/>} />
       <Route path="/history/appointments" element = {<AppointmentsPage/>} />
+      <Route path="/history/appointments/new" element = {<AddAppointmentPage/>} />
       <Route path="/history/appointments/:id" element = {<AppointmentSinglePage/>} />
       <Route path="/history/appointments/:id/edit" element = {<EditAppointmentPage/>} />
       <Route path="/history/medications" element = {<MedicationsPage/>} />

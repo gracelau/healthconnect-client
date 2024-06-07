@@ -42,7 +42,7 @@ const apiUrl = "http://localhost:8080";
                 const formattedData = {
                     ...response.data,
                     date: new Date(response.data.timestamp).toLocaleDateString()}
-
+                    
             } catch (err) {
                 return console.error("PUT request failed:", err);
 
