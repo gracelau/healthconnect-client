@@ -3,7 +3,7 @@
 function Refs () {
 
     return (
-        <div ClassName="appts-test">
+        <div className="appts-test">
           
             Referrals page test - placeholder
         </div>

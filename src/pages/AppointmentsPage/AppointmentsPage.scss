@@ -35,7 +35,16 @@
         border-bottom: 1px solid black;
     }
 
+    &__row {
+        cursor: pointer;
+        &:hover{
+            color: $fifth;
+            font-weight:bold;
+        }
+    }
+
 }
+
 
 td{
     border-right: 1px solid black;

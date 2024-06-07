@@ -36,10 +36,11 @@ const Appts =() => {
     const handleRowClick = (id) => {
       navigate(`/history/appointments/${id}`);
   };
-    const handleEdit = (e,id) => {
-      e.stopPropagation();
-        navigate(`/history/appointments/${id}/edit`);
-      };
+    // const handleEdit = (e,id) => {
+    //   console.log("line40:",e)
+    //   e.stopPropagation();
+    //     navigate(`/history/appointments/${id}/edit`);
+    //   };
 
     useEffect(() => {
         getAllAppts(setAppts);
@@ -67,11 +68,12 @@ const Appts =() => {
                 </thead>
                 <tbody>
                     {appts.map(item=> 
-                      <tr key={item.id} onClick={() => handleRowClick(item.id)}>
+                      <tr className="appts__row" key={item.id} onClick={() => handleRowClick( item.id)}>
                       <td>{item.Provider} </td>
                       <td>{item.Reason}</td>
-                      <td>{item.date}</td> <button className="appts__edit-btn" onClick={() => handleEdit(item.id)}><img className ="appts__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
-                      <button className="appts__delete-btn"><img className="appts__del-btn-svg" src ={delIcon} alt="delete icon"/></button>
+                      <td>{item.date}</td> 
+                      {/* <button className="appts__edit-btn" onClick={(e) => handleEdit(e, item.id)}><img className ="appts__edit-btn-svg" src={editIcon} alt ="edit icon"/></button> */}
+                      {/* <button className="appts__delete-btn"><img className="appts__del-btn-svg" src ={delIcon} alt="delete icon"/></button> */}
                   </tr>
                  
 

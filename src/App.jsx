@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import AppointmentsPage from "./pages/AppointmentsPage/AppointmentsPage";
 import AppointmentSinglePage from "./pages/AppointmentSinglePage/AppointmentSinglePage";
+import EditAppointmentPage from "./pages/EditAppointmentPage/EditAppointmentPage";
 import MedicationsPage from "./pages/MedicationsPage/MedicationsPage";
 import ReferralsPage from "./pages/ReferralsPage/ReferralsPage";
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/history" element = {<HistoryPage/>} />
       <Route path="/history/appointments" element = {<AppointmentsPage/>} />
       <Route path="/history/appointments/:id" element = {<AppointmentSinglePage/>} />
+      <Route path="/history/appointments/:id/edit" element = {<EditAppointmentPage/>} />
       <Route path="/history/medications" element = {<MedicationsPage/>} />
       <Route path="/referrals" element = {<ReferralsPage/>} />
       {/* <Route path="/settings" element = {<SettingsPage/>} /> */}

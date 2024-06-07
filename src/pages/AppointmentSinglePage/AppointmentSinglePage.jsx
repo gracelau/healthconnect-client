@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import backArrowIcon from "../../assets/icons/backarrow.svg";
 import editIcon from "../../assets/icons/edit.svg";
-import delIcon from "../../assets/icons/delete.svg";
 import "../AppointmentSinglePage/AppointmentSinglePage.scss";
 
 
@@ -107,6 +106,8 @@ const apiUrl = "http://localhost:8080";
                     <li className="appt__view-listitem"><strong>Date:</strong>{selectedAppt.date} </li>
                 </ul>
              </div>
+      
+
         </div>
         </div>
 
