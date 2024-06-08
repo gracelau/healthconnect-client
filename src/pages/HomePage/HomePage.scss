@@ -1,5 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
 
 .home {
 
@@ -15,6 +16,7 @@
         width:100%;
         // border: 2px solid grey;
         background-color: #dce5ec;
+        // flex-grow: 1; //testing 
         
     }
     &__links-container {
@@ -43,16 +45,23 @@
     &__vitals-container{
         display:flex;
         // border: 1px solid black;
-        width: 50%;
+        width: 40%;
+        height:30vh;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         background-color:rgb(242, 240, 240);
         margin-left: 20rem;
         border-radius: 10px;
         margin-bottom:1rem;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    
     }
+    &_-vitals-section{
+        display:flex;
+        flex-direction:column;
+        
 
+    }
     &__history-btn, &__tests-btn, &__ref-btn{
         width:50%;
         
@@ -73,8 +82,30 @@
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
 
     }
+
+    &__vitals-reminders{
+        // display: flex;
+        // order:5;
+        // flex-direction: column;
+        position:relative;
+        left:300px;
+        width: 25%;
+        height:80vh;
+        transform:translate(460px,-890px);
+        right:-100px;
+        top:10px;
+        background-color:rgb(242, 240, 240);
+        border-radius: 10px;
+        margin-left:20rem;
+        // margin-right: 1rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+        // align-self:flex-start;
+
+    }
     &__wrapper {
         display: flex;
+        // flex-direction:row; //testing
+        // width:100%;//testing
         
     }
 }
