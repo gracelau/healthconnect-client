@@ -10,12 +10,14 @@ import AppointmentSinglePage from "./pages/AppointmentSinglePage/AppointmentSing
 import EditAppointmentPage from "./pages/EditAppointmentPage/EditAppointmentPage";
 import MedicationsPage from "./pages/MedicationsPage/MedicationsPage";
 import ReferralsPage from "./pages/ReferralsPage/ReferralsPage";
+import Sidebar from "./components/SideBar/Sidebar";
 
 function App() {
   return (
     <BrowserRouter>
+    <Sidebar/>
     {/* <Header/> */}
-    <Nav/>
+    {/* <Nav/> */}
       <div className="App">
     <Routes>
       <Route path="/" element = {<HomePage/>} />
