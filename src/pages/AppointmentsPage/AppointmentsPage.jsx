@@ -51,9 +51,9 @@ const Appts =() => {
         <div className="appts__wrapper">
             <div className="appts__container">
              <h3 className =" appts__title">Appointments</h3>
-             <div className="appts__add-btn-container">
+             {/* <div className="appts__add-btn-container">
               <button className="appts__add-btn">Add</button>
-             </div>
+             </div> */}
 
              <table className="appts__table">
                 <thead>
@@ -71,7 +71,7 @@ const Appts =() => {
                       <tr className="appts__row" key={item.id} onClick={() => handleRowClick( item.id)}>
                       <td>{item.Provider} </td>
                       <td>{item.Reason}</td>
-                      <td>{item.date}</td> 
+                      <td className="appts__row-border-none">{item.date}</td> 
                       {/* <button className="appts__edit-btn" onClick={(e) => handleEdit(e, item.id)}><img className ="appts__edit-btn-svg" src={editIcon} alt ="edit icon"/></button> */}
                       {/* <button className="appts__delete-btn"><img className="appts__del-btn-svg" src ={delIcon} alt="delete icon"/></button> */}
                   </tr>

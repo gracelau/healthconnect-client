@@ -3,6 +3,10 @@
 
 .appts {
 
+    &__title {
+        color: $fourth;
+    }
+
     &__add-btn-container {
         width:40%;
         display: flex;
@@ -20,6 +24,15 @@
 
     }
 
+    &__container {
+        width:60%;
+        margin-left:20rem;
+        margin-top:5rem;
+        border-radius:10px;
+        padding:1rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    }
+
     &__table {
 
             border-collapse: collapse;
@@ -27,7 +40,7 @@
             // font-family: sans-serif;
             font-size: 0.8rem;
             letter-spacing: 1px;
-            width:50%;
+            width:70%;
           
     }
 
@@ -42,10 +55,18 @@
             font-weight:bold;
         }
     }
+    &__row-border-none {
+        border:none;
+    }
 
 }
 
 
+th {
+    color: $fourth;
+}
 td{
-    border-right: 1px solid black;
+    border-right: 1px solid $second;
+    text-align:left;
+    padding-left:4rem;
 }

@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "../MedicationsPage/MedicationsPage.scss";
 const {REACT_APP_API_URL} = process.env;
+
 
 
 
@@ -45,7 +47,7 @@ const Meds =() => {
              <table className="meds__table">
                 <thead>
                     
-                    <tr>
+                    <tr className="meds__table-top-section">
                         <th>Name</th>
                  
                         <th>DIN</th>
@@ -58,8 +60,9 @@ const Meds =() => {
                       <tr key= {item.id}>
                       <td>{item.Name} </td>
                       <td>{item.DIN}</td>
-                      <td>{item.Date}</td> <button className="appts__edit-btn" onClick={() => handleEdit(item.id)}>Edit</button>
-                      <button className="meds__delete-btn">Delete</button>
+                      <td className="meds__row-border-none">{item.Date}</td> 
+                      {/* <button className="appts__edit-btn" onClick={() => handleEdit(item.id)}>Edit</button>
+                      <button className="meds__delete-btn">Delete</button> */}
                   </tr>
                  
 
