@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import backArrowIcon from "../../assets/icons/backarrow.svg";
 import editIcon from "../../assets/icons/edit.svg";
+import shareIcon from "../../assets/icons/share.svg";
 import "../AppointmentSinglePage/AppointmentSinglePage.scss";
 const {REACT_APP_API_URL} = process.env;
 
@@ -48,15 +49,19 @@ const {REACT_APP_API_URL} = process.env;
                  <Link to="/history/appointments"><button className="appt__back-btn"><img src={backArrowIcon}/></button></Link>
                  <h3 className =" appt__title">Appointment with {selectedAppt.Provider}</h3> 
                 </div>
+
           
-             <div className="appt__add-btn-container">
-              <button className="appt__share-btn">Share</button>
-              <button className="appt__edit-btn" onClick={() => handleEdit(selectedAppt.id)}><img className ="appt__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
+             <div className="appt__share-btn-container">
+             <button className="appt__share-btn"> <img src={shareIcon}/>Share</button>
+             
              </div>
           
 
 
              <div className="appt__view">
+                <div className="appt__view-btn-container">
+                   <button className="appt__edit-btn" onClick={() => handleEdit(selectedAppt.id)}><img className ="appt__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
+                </div>
                 <ul className = "appt__view-list" key={selectedAppt.id}>
                     <li className="appt__view-listitem"><strong>Provider:</strong>{selectedAppt.Provider} </li>
                     <li className="appt__view-listitem"><strong>Reason:</strong>{selectedAppt.Reason} </li>

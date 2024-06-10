@@ -160,7 +160,7 @@ return (
             id="details"
             name="details"
             placeholder="Please fill in any relevant details pertaining to appointment."
-            className={`appt__form__input ${
+            className={`appt__form__input-details ${
               fieldErrors.details? "appt__form__input--error" : ""
             }
         `}
@@ -181,7 +181,7 @@ return (
             type="text"
             id="date"
             name="date"
-            placeholder="Date"
+            placeholder="M/D/YYYY"
             className={`appt__form__input ${
               fieldErrors.date? "appt__form__input--error" : ""
             }

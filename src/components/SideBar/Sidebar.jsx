@@ -11,7 +11,7 @@ function Sidebar() {
       <h2 className="sidebar__title">Jane Smith</h2>
       <ul className="sidebar__nav">
       <li className="sidebar__link"><NavLink to="/" >Dashboard</NavLink></li> 
-        <li className="sidebar__link">Appointment</li>
+        <li className="sidebar__link"><NavLink to ="/history/appointments/new">Appointment</NavLink></li>
         <li className="sidebar__link">Symptom Tracker</li>
         <li className="sidebar__settings">Settings</li>
         <li className="sidebar__acct">Account</li>

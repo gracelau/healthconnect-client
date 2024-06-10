@@ -13,7 +13,7 @@ const getAllMeds = async (setMeds) => {
       const response = await axios.get(`${REACT_APP_API_URL}/history/medications`);
       const formattedData = response.data.map(med => ({
         ...med,
-        date: new Date(med.timestamp).toLocaleDateString()
+        Date: new Date(med.Date).toLocaleDateString()
     }));
     setMeds(formattedData);
     

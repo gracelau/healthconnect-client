@@ -1,0 +1,49 @@
+
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.newappt {
+
+
+    &__container {
+        margin-left:20rem;// moving the div
+        width:50%;
+        height:60vh;
+        margin-left:20rem;
+        margin-top:5rem;
+        border-radius:10px;
+        padding:1rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    }
+    &__title-container{
+        display: flex;
+        flex-direction: row;
+        align-items:baseline;
+    }
+
+    &__title{
+        color:$fifth;
+    }
+
+    &__top{
+        display:flex;
+        flex-direction:row;
+    }
+
+    &__back-btn{
+        border: none;
+        background-color: transparent;
+    }
+
+    &__edit-btn{
+        background-color: transparent;
+        color: $fifth;
+        border: none;
+    }
+
+    // &__wrapper {
+    //     margin-left:20rem;
+    // }
+
+
+}

@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import backArrowIcon from "../../assets/icons/backarrow.svg";
-import delIcon from "../../assets/icons/delete.svg";
+import shareIcon from "../../assets/icons/share.svg";
 import AppointmentForm from "../../components/AppointmentForm/AppointmentForm";
-import "../AppointmentSinglePage/AppointmentSinglePage.scss";
+import "../EditAppointmentPage/EditAppointmentPage.scss";
 
 const apiUrl = "http://localhost:8080";
 
@@ -51,12 +51,12 @@ const EditAppointmentPage = () => {
             </button>
           </Link>
           <h3 className=" appt__title">
-            Appointment with {selectedAppt.Provider}
+           Edit Appointment
           </h3>
         </div>
 
-        <div className="appt__add-btn-container">
-          <button className="appt__share-btn">Share</button>
+        <div className="appt__share-btn-container">
+          <button className="appt__share-btn"> <img src={shareIcon}/>Share</button>
          </div>
         <AppointmentForm 
         handleCancel={() => navigate(`/history/appointments/${id}`)}
