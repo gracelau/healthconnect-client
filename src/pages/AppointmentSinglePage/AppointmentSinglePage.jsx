@@ -63,7 +63,7 @@ const {REACT_APP_API_URL} = process.env;
 
           
              <div className="appt__share-btn-container">
-             <button className="appt__share-btn"> <img src={shareIcon}/>Share</button>
+             <button className="appt__share-btn"> <img src={shareIcon}/></button>
              
              </div>
           

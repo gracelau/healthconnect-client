@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 .sidebar {
     width: 240px;
-    height: 80vh;
+    height: 85vh;
     background-color: white;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
     position: absolute;
@@ -13,6 +13,11 @@
   &__title{
     color:$fifth;
     font-weight:bold;
+  }
+
+  &__logo {
+    width:100px;
+    margin-bottom:2rem;
   }
 
     &__link {

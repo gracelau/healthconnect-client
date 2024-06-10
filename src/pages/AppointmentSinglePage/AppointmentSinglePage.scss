@@ -7,7 +7,7 @@
 
     &__container {
         margin-left:20rem;// moving the div
-        width:60%;
+        width:50%;
         margin-left:20rem;
         margin-top:5rem;
         border-radius:10px;
@@ -31,8 +31,13 @@
 
     &__edit-btn{
         background-color: transparent;
-        color: $fifth;
         border: none;
+    }
+
+    &__delete-btn {
+        background-color: transparent;
+        border: none;
+        margin-left:1rem;
     }
 
     &__share-btn-container{
@@ -44,6 +49,7 @@
     &__share-btn {
         background-color: transparent;
         border: none;
+        margin-bottom:1rem;
     }
 
     &__view {
