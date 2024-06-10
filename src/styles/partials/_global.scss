@@ -1,5 +1,5 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 
 
 * {
@@ -9,9 +9,7 @@
   }
 
 body {
-    /* Set font defaults per style guide */
-    font-family: $font;
-    font-weight: $regular;
+  
     font-size: 0.813rem; //13px - used M P2 Medium as the default body sizing from Style Guide
     line-height: 1.25rem; //20 px 
     @include tablet {
@@ -22,4 +20,20 @@ body {
   
   li {
     list-style:none;
+  }
+
+  a {
+    text-decoration:none;
+    &:hover {
+      color:$fourth;
+      font-weight: bold;
+    }
+
+    &:visited {
+     color: $fifth;
+    }
+
+    &:active {
+      color: $fifth;
+    }
   }

@@ -1,27 +1,148 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
 
 .home {
 
     &__title {
         color: $fifth;
+        font-size:1.2rem;
+        margin-left:20rem;
+        margin-top:1.4rem;
+        margin-bottom:1rem;
+    }
+    &__chart{
+        margin-left: 20rem;
+    }
+    &__container {
+       
+        width:100%;
+        background-color: #dce5ec;
+       
+        
+    }
+
+    &__sections-wrapper {
+        display:flex;
+        flex-direction:row;
+        justify-content: space-around;
+    }
+
+    &__middle-container {
+        display:flex;
+        flex-direction:column;
+        width:140vw;
     }
     &__links-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 30%;
+        width: 65%;
+        height:45vh;
+        background-color:rgb(242, 240, 240);
+        border-radius: 10px;
+        margin-left:20rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
     }
 
-    &__history-btn, &__tests-btn, &__ref-btn{
+   
+    &__links-container-title{
+        margin-top:1rem;
+        margin-left:1.5rem;
+        margin-bottom:1rem;
+        font-size:1.1rem;
         color:$fifth;
-        background-color: $primary;
-        border: 1px solid $third;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-right:1rem;
+    }
 
+    &__links-container-img {
+        width:220px;
+        margin-left:1rem;
+    }
+
+    &__links-container-group{
+        transform:translate(40px,-230px);
+    }
+
+    &__vitals-container{
+        width: 65%;
+        height:30vh;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color:rgb(242, 240, 240);
+        margin-left: 20rem;
+        border-radius: 10px;
+        margin-bottom:1rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    
+    }
+
+    &__vitals-title{
+        color:$fifth;
+        font-size:1.1rem;
+        margin-top:1rem;
+        margin-left:1.5rem;
+    }
+
+    &__vitals-wrapper {
+        height:30%;
+        display:flex;
+        flex-direction:row;
+    }
+
+    &__vitals-group {
+        display:flex;
+        justify-content:space-around;
+    }
+    &__vitals-section{
+        display:flex;
+        flex-direction:column;
+       
+        
+
+    }
+    &__history-btn, &__tests-btn, &__ref-btn{
+        width:50%;
+        color:$fifth;
+        background-color:white;
+        border:none;
+        border-radius: 8px;
+        height:5rem;
+        font-weight: bold;
+        font-size:1rem;
+       letter-spacing:0.5px;
+        margin-left:15rem;
+        margin-right:1rem;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+        margin-bottom:0.3rem;
+
+    }
+
+    &__vitals-reminders{
+         width: 35%;
+        height:80vh;
+        margin-right:3rem;
+        background-color:rgb(242, 240, 240);
+        border-radius: 10px;
+       box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+     
+    }
+
+    &__vitals-reminders-subtitle{
+        color: $fifth;
+        font-size:1.1rem;
+        margin-left:1rem;
+        margin-bottom:1.5rem;
+        padding-top:1.2rem;
+        
+    }
+
+    &__vitals-reminders-card{
+        
+        margin-bottom:2rem;
+        margin-left:1rem;
+        color:black;
+        font-weight: semi-bold;
+       }
+    &__wrapper {
+        display: flex;
+       
+        
     }
 }

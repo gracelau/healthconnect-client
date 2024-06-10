@@ -1,0 +1,106 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.sidebar {
+    width: 240px;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    position: absolute;
+    top:10px;
+    padding: 20px;
+    border-radius:8px;
+  
+  &__title{
+    color:$fifth;
+    font-weight:bold;
+  }
+
+  &__logo {
+    width:100px;
+    margin-bottom:2rem;
+  }
+
+    &__link {
+    color:$fifth;
+    padding-top:1rem;
+    margin-bottom:1rem;
+    list-style-type: none;
+    text-decoration: none;
+
+    &:hover {
+      color: blue;
+      text-decoration:none;
+    }
+    &:focus {
+      color: purple;
+      text-decoration: none;
+    }
+
+    &:active {
+      color:green;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color:$primary;
+      text-decoration: none;
+    }
+   
+    }
+
+    &__nav {
+      // display: flex;
+      // flex-direction:column;
+      padding-top:1rem;
+    }
+
+
+     &__settings{
+      color:$fifth;
+      // background-color: $second;
+      // padding-left: 3.5rem;
+      // padding-right:3.5rem;
+      font-weight:bold;
+      list-style-type: none;
+      position:absolute;
+      bottom:100px;
+      border-radius:8px;
+      margin-bottom:3rem;
+
+     }
+
+     &__acct {
+      color:$fifth;
+      // background-color: $second;
+      // padding-left: 3.5rem;
+      // padding-right:3.5rem;
+      font-weight:bold;
+      list-style-type: none;
+      position:absolute;
+      bottom:80px;
+      border-radius:8px;
+      margin-bottom:2rem;
+      // margin-bottom:3rem;
+
+
+     }
+    &__logout {
+      color:$fifth;
+      // background-color: $second;
+      padding-left: 3.5rem;
+      padding-right:3.5rem;
+      font-weight:bold;
+      list-style-type: none;
+      position:absolute;
+      bottom:0;
+      border-radius:8px;
+     padding-top: 0.3rem;
+     padding-bottom:0.3rem;
+      margin-bottom:3rem;
+      display: flex;
+      flex-direction: row;
+      left:-25px;
+
+    }
+  }
+

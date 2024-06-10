@@ -1,0 +1,63 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.appt__form {
+    
+
+    &__container {
+        height:40vh;
+    }
+
+    &-field-label {
+        color: $fourth;
+        font-weight:700;
+        font-family: "Open Sans";
+        // margin-right:1rem;
+     
+
+    }
+
+    &-field-group {
+        display:flex;
+        flex-direction:column;
+        margin-bottom:1rem;
+        align-items:baseline;
+        
+    }
+
+    &-field-label{
+        display:flex;
+    }
+
+    &__input {
+        height:1.3rem;
+    }
+
+    &__input-details{
+        resize: none;
+        height: 4rem;
+    }
+
+    &-btn-group {
+        display:flex;
+        justify-content:flex-end;
+    }
+    &-btn-cancel{
+        color: $fifth;
+        height:30px;
+        background-color: white;
+        padding-left:2rem;
+        padding-right:2rem;
+        border: 1px solid grey;
+    }
+
+    &-btn-save {
+        color:$fifth;
+        height:30px;
+        background-color: white;
+        padding-left:2rem;
+        padding-right:2rem;
+        margin-left:1rem;
+        border: 1px solid grey;
+    }
+}
