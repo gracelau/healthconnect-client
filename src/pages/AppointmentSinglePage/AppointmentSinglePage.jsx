@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import backArrowIcon from "../../assets/icons/backarrow.svg";
 import editIcon from "../../assets/icons/edit.svg";
+import deleteIcon from "../../assets/icons/delete.svg";
 import shareIcon from "../../assets/icons/share.svg";
 import "../AppointmentSinglePage/AppointmentSinglePage.scss";
 const {REACT_APP_API_URL} = process.env;
@@ -21,6 +22,16 @@ const {REACT_APP_API_URL} = process.env;
     const handleEdit = (id) => {
         navigate(`/history/appointments/${id}/edit`);
       };
+
+    const handleDelete = async (id) => {
+        const ans = window.confirm("Are you sure you want to delete this appointment?");
+        if (ans === true) {
+            const response = await axios.delete(
+                `${REACT_APP_API_URL}/history/appointments/${id}`
+            );
+            navigate(`/history/appointments`);
+        }
+    };
 
     useEffect(() => {
      
@@ -61,6 +72,7 @@ const {REACT_APP_API_URL} = process.env;
              <div className="appt__view">
                 <div className="appt__view-btn-container">
                    <button className="appt__edit-btn" onClick={() => handleEdit(selectedAppt.id)}><img className ="appt__edit-btn-svg" src={editIcon} alt ="edit icon"/></button>
+                   <button className="appt__delete-btn" onClick={() => handleDelete(selectedAppt.id)}><img className ="appt__delete-btn-svg" src={deleteIcon} alt ="delete icon"/></button>
                 </div>
                 <ul className = "appt__view-list" key={selectedAppt.id}>
                     <li className="appt__view-listitem"><strong>Provider:</strong>{selectedAppt.Provider} </li>

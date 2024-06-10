@@ -13,8 +13,8 @@ function AppointmentForm ( {handleCancel, handleSubmit, id}) {
    const [details, setDetails] = useState("");
    const [date, setDate] = useState("");
    const [fieldErrors,setFieldErrors] = useState({});
-   const [validForm, setValidForm] = useState(true);
-console.log(REACT_APP_API_URL);
+   const [validForm, setValidForm] = useState(false);
+// console.log(REACT_APP_API_URL);
     useEffect(() => {
         if (id) {
             async function getAppointment () {
@@ -29,11 +29,15 @@ console.log(REACT_APP_API_URL);
                     setReason(response.data.Reason)
                     setDetails(response.data.details)
                     setDate(formattedDate)
+                    setValidForm(true);
                 }catch (err) {
                     console.error("GET request to /history/appointments/:id failed:", err);
                 }
             } 
             getAppointment();
+        } else {
+          setFieldErrors({ "Provider": true, "Reason": true, "details": true, "date": true });
+          setValidForm(false);
         }
        
     }, []);
@@ -42,6 +46,11 @@ const updateErrors = (fieldName, isError) => {
 const errors = { ...fieldErrors };
 errors[fieldName] = isError;
 setFieldErrors(errors);
+if (Object.keys(errors).find(fieldName => errors[fieldName] === true)) {
+  setValidForm(false);
+} else {
+  setValidForm(true);
+}
 };
 
 const handleProviderChange = (e) =>{
@@ -118,9 +127,6 @@ return (
         `}
             value={provider}
             onInput={handleProviderChange }
-            style={{
-              border: fieldErrors.Provider ? "1px solid red" : "",
-            }}
           />
             
 
@@ -143,9 +149,6 @@ return (
         `}
             value={reason}
             onInput={handleReasonChange}
-            style={{
-              border: fieldErrors.Provider ? "1px solid red" : "",
-            }}
           />
             
 
@@ -166,9 +169,6 @@ return (
         `}
             value={details}
             onInput={handleDetailsChange}
-            style={{
-              border: fieldErrors.Provider ? "1px solid red" : "",
-            }}
           />
             
         </div>
@@ -188,9 +188,6 @@ return (
         `}
             value={date}
             onInput={handleDateChange}
-            style={{
-              border: fieldErrors.Provider ? "1px solid red" : "",
-            }}
           />
             
 
