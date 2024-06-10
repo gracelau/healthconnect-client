@@ -91,8 +91,8 @@ This shows in a visual format, the user’s specific test result. It will be dis
 No external APIs,  will be making Express API 
 
 ### Sitemap
-![HealthConnect Mockups SiteMap](https://github.com/gracelau/healthconnect-client/assets/11990799/f9e16163-456b-435e-b3bb-c121328ce837)
 
+![HealthConnect-SiteMap](https://github.com/gracelau/healthconnect-client/assets/11990799/e62bfa61-37ba-4079-98b2-7ee81a87ec69)
 
 
 ### Mockups
