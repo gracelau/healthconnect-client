@@ -13,7 +13,7 @@ const apiUrl = "http://localhost:8080";
 
 const getAllAppts = async (setAppts) => {
     try{
-      // const response = await axios.get(`${apiUrl}/videos?api_key=${apiKey}`);
+    
       const response = await axios.get(`${apiUrl}/history/appointments`);
       const formattedData = response.data.map(appt => ({
         ...appt,
@@ -31,16 +31,38 @@ const getAllAppts = async (setAppts) => {
 const Appts =() => {
     const [appts, setAppts] = useState([]);
     const [selectedAppt, setSelectedAppt] = useState({});
+    const [sortColumn, setSortColumn] = useState("date");
+    const [sortDirection, setSortDirection] = useState("desc"); // asc / desc
     const navigate = useNavigate();
 
     const handleRowClick = (id) => {
       navigate(`/history/appointments/${id}`);
   };
-    // const handleEdit = (e,id) => {
-    //   console.log("line40:",e)
-    //   e.stopPropagation();
-    //     navigate(`/history/appointments/${id}/edit`);
-    //   };
+
+  const toggleSort = (column) => {
+    if (column !== sortColumn) {
+      setSortColumn(column);
+      setSortDirection("asc");
+      return;
+    }
+    if (sortDirection === "desc") {
+      setSortDirection("asc");
+    } else {
+      setSortDirection("desc");
+    }
+  };
+
+  const sortedAppts = appts.toSorted((a, b) => {
+    let diff;
+    if (sortColumn === "date") {
+      diff = new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+    } else {
+      diff = a[sortColumn].localeCompare(b[sortColumn]);
+    }
+    return sortDirection === "asc" ? diff : -diff;
+  });
+
+  const arrow = (sortDirection === "asc") ? '\u2191' : '\u2193';
 
     useEffect(() => {
         getAllAppts(setAppts);
@@ -59,21 +81,32 @@ const Appts =() => {
                 <thead>
                     
                     <tr className="appts__table-top-section">
-                        <th>Provider</th>
+                        <th>
+                          <span style={{ cursor: "pointer", userSelect: "none" }} onClick={() => toggleSort("Provider")}>
+                            Provider {sortColumn === "Provider" ? arrow : ""}
+                          </span>
+                        </th>
                  
-                        <th>Reason</th>
+                        <th>
+                          <span style={{ cursor: "pointer", userSelect: "none" }} onClick={() => toggleSort("Reason")}>
+                            Reason {sortColumn === "Reason" ? arrow : ""}
+                          </span>
+                        </th>
                    
-                        <th>Date</th>
+                        <th>
+                            <span style={{ cursor: "pointer", userSelect: "none" }} onClick={() => toggleSort("date")}>
+                            Date {sortColumn === "date" ? arrow : ""}
+                            </span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {appts.map(item=> 
+                    {sortedAppts.map(item=> 
                       <tr className="appts__row" key={item.id} onClick={() => handleRowClick( item.id)}>
                       <td>{item.Provider} </td>
                       <td>{item.Reason}</td>
                       <td className="appts__row-border-none">{item.date}</td> 
-                      {/* <button className="appts__edit-btn" onClick={(e) => handleEdit(e, item.id)}><img className ="appts__edit-btn-svg" src={editIcon} alt ="edit icon"/></button> */}
-                      {/* <button className="appts__delete-btn"><img className="appts__del-btn-svg" src ={delIcon} alt="delete icon"/></button> */}
+                      
                   </tr>
                  
 
